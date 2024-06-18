@@ -27,10 +27,10 @@ body.dark {
 .dark .input-group input { color: #909090; }
 .dark .input-group input::placeholder { color: #909090; }
 .dark .input-group:nth-child(2) input{
-    background: transparent url("/public/assets/images/user-light.svg") no-repeat 15px center;
+    background: url("/public/assets/images/user-light.svg") no-repeat 15px center;
 }
 .dark .input-group:nth-child(3) input{
-    background: transparent url("/public/assets/images/padlock-light.svg") no-repeat 15px center;
+    background: url("/public/assets/images/padlock-light.svg") no-repeat 15px center;
 }
 
 .dark .remember span { color: #EDEDED; }

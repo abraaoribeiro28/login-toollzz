@@ -1,5 +1,5 @@
 .container {
-    height: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -12,26 +12,10 @@
     background-size: cover;
 }
 
-@media only screen and (min-width: 992px) {
-    .container {
-        grid-template-columns: 2fr 1.5fr;
-    }
-
-    .banner {
-        display: block;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .container {
-        grid-template-columns: 2fr 1fr;
-    }
-}
-
 .banner .content {
     height: 100%;
     padding: 80px 56px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    background: var(--bg-gradient-banner);
 }
 
 .banner .actions-top,
@@ -68,14 +52,14 @@
 }
 
 .carousel .tag span {
-    color: #FFFFFF;
     font-size: .9em;
     font-weight: 300;
     padding: 8px 12px;
     margin-bottom: 24px;
     border-radius: 20px;
-    background: #0761E2;
     display: inline-block;
+    color: var(--text-white);
+    background: var(--primary-color);
 }
 
 .carousel .text {
@@ -83,14 +67,14 @@
 }
 
 .carousel .title {
-    color: #FFFFFF;
     font-weight: 500;
     margin-bottom: 16px;
+    color: var(--text-white);
 }
 
 .carousel .description {
-    color: #909090;
     font-size: 1.25em;
+    color: var(--neutral-500);
 }
 
 .carousel .actions {
@@ -104,17 +88,14 @@
     display: flex;
 }
 
-.carousel .actions .indicator {
+.carousel .actions .indicator,
+.carousel .actions .indicator.active{
     width: 96px;
     height: 4px;
-    background: #222222;
 }
 
-.carousel .actions .indicator.active {
-    width: 96px;
-    height: 4px;
-    background: #FFFFFF;
-}
+.carousel .actions .indicator { background: #222222; }
+.carousel .actions .indicator.active { background: #FFFFFF; }
 
 .carousel .actions .control{
     gap: 40px;
@@ -134,20 +115,13 @@
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
-@media only screen and (min-width: 576px) {
-    .login .actions-top {
-        border: none;
-    }
-}
-
 .login .actions-top .btn {
-    color: #000000;
     font-weight: 500;
     font-size: 1.125em;
 }
 
 .login .actions-top a.btn:hover {
-    color: #008FBF;
+    color: var(--secondary-color);
 }
 
 .logo {
@@ -159,28 +133,21 @@
     display: none;
 }
 
-@media only screen and (min-width: 992px) {
-    .logo { padding: 0; }
-    .logo-mobile { display: none; }
-    .logo-desktop { display: inline; }
-    .btn-back-mobile {display: none;}
-}
-
 .welcome {
     padding: 16px 24px;
 }
 
 .welcome h2{
-    color: #0E0E0E;
     font-weight: 600;
     font-size: 1.25em;
     margin-bottom: 16px;
+    color: var(--text-pure);
 }
 
 .welcome p{
-    color: #585858;
     font-size: 1em;
     font-weight: 500;
+    color: var(--text-normal);
 }
 
 .socials {
@@ -197,15 +164,15 @@
     border-radius: 8px;
     align-items: center;
     justify-content: center;
-    border: 1px solid #151515;
+    border: 1px solid var(--icon-log-stroke);
 }
 
 .socials .btn-social:hover {
-    border-color: #008FBF;
+    border-color: var(--secondary-color);
 }
 
 .socials .btn-social:hover svg path{
-   fill: #008FBF;
+   fill: var(--secondary-color);
 }
 
 .or {
@@ -216,9 +183,9 @@
 }
 
 .or span{
-    color: #585858;
     font-size: 18px;
     font-weight: 400;
+    color: var(--text-normal);
 }
 
 .or .divider {
@@ -227,14 +194,10 @@
     background: rgba(0,0,0,.1);
 }
 
+/* Form Login */
+form { padding: 24px; }
 
-form {
-    padding: 24px;
-}
-
-.input-group:nth-child(2){
-    margin-bottom: 24px;
-}
+.input-group:nth-child(2){ margin-bottom: 24px; }
 
 .input-group label{
     font-size: 1em;
@@ -245,28 +208,38 @@ form {
 
 .input-group input{
     width: 100%;
-    color: #585858;
     font-size: 1em;
     border-radius: 8px;
-    border: 1px solid #6A6A6A;
+    color: var(--text-normal);
     padding: 12px 20px 12px 40px;
+    border: 1px solid var(--border-color);
 }
 
 .input-group:nth-child(2) input{
-    background: #F9F9F9 url("/public/assets/images/user.svg") no-repeat 15px center;
+    background: transparent url("/public/assets/images/user.svg") no-repeat 15px center;
 }
 
 .input-group:nth-child(3) input{
-    background: #F9F9F9 url("/public/assets/images/padlock.svg") no-repeat 15px center;
+    background: transparent url("/public/assets/images/padlock.svg") no-repeat 15px center;
 }
 
 .input-group input:hover {
-    border-color: #008FBF;
+    border-color: var(--secondary-color);
 }
 
 .input-group input:focus-visible {
     outline: none;
-    border-color: #0761E2;
+    border-color: var(--primary-color);
+}
+
+.input-group.input-error input {
+    border-color: red;
+}
+
+.error {
+    color: red;
+    font-size: .9em;
+    font-weight: 500;
 }
 
 .reverse {
@@ -300,46 +273,23 @@ form {
     font-size: .7em;
 }
 
-@media only screen and (min-width: 992px) {
-    .captcha {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .reverse {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 .btn-submit {
     gap: 8px;
     width: 100%;
     height: 48px;
     display: flex;
-    color: #FFFFFF;
     margin: 24px 0;
     font-size: 1.15em;
     border-radius: 8px;
-    background: #0761E2;
     align-items: center;
     justify-content: center;
+    color: var(--text-white);
+    background: var(--primary-color);
 }
 
-.btn-submit:hover {
-    background: #008FBF;
-}
+.btn-submit:hover { background: var(--secondary-color); }
 
-.btn-submit svg{
-    display: none;
-}
-
-@media only screen and (min-width: 992px) {
-    .btn-submit svg{
-        display: inline;
-    }
-}
+.btn-submit svg{ display: none; }
 
 .remember {
     padding: 24px 0;
@@ -351,9 +301,9 @@ form {
 }
 
 .remember span{
-    color: #0E0E0E;
-    font-weight: 500;
     font-size: .9em;
+    font-weight: 500;
+    color: var(--text-pure);
 }
 
 .remember input{
@@ -364,21 +314,15 @@ form {
 
 .forget {
     padding: 24px;
-    color: #585858;
     font-size: 1em;
     font-weight: 500;
     text-align: center;
+    color: var(--text-normal);
 }
 
 .forget a{
-    color: #0E0E0E;
     font-size: 1em;
     font-weight: 600;
     text-decoration: none;
-}
-
-@media only screen and (min-width: 992px) {
-    .login .actions-top {
-        border: none;
-    }
+    color: var(--text-pure);
 }

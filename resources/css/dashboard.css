@@ -1,0 +1,40 @@
+form { padding: 0;}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-container {
+    padding: 30px 50px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h1 {
+    color: var(--text-pure);
+}
+
+.dashboard-container p {
+    margin: 10px 0 20px;
+    color: var(--text-normal);
+}
+
+.dashboard-container button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: var(--text-white);
+    background-color: var(--primary-color);
+}
+
+.dashboard-container button:hover {
+    background-color: var(--secondary-color);
+}
