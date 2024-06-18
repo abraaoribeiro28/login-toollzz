@@ -1,0 +1,39 @@
+body.dark {
+    background: #232323;
+}
+
+.dark .btn-mode svg { fill: #FFFFFF; }
+.dark .btn-mode svg path { fill: #020A09;}
+
+.dark .logo-light { display: none;}
+.dark .logo-dark { display: inline;}
+
+.dark .btn-back-mobile svg rect { stroke: #FFFFFF; }
+.dark .btn-back-mobile svg path { fill: #FFFFFF; }
+
+.dark .login .actions-top .btn { color: #0761E2}
+
+.dark .welcome h2 {color: #EDEDED;}
+.dark .welcome p {color: #909090;}
+
+.dark .btn-social { border-color: #F5F5F5; }
+.dark .btn-social svg path { fill: #FFFFFF; }
+
+.dark .or span { color: #909090; }
+.dark .or .divider { background: rgba(255, 255, 255, .1)}
+
+.dark .input-group { color: #EDEDED; }
+
+.dark .input-group input { color: #909090; }
+.dark .input-group input::placeholder { color: #909090; }
+.dark .input-group:nth-child(2) input{
+    background: transparent url("/public/assets/images/user-light.svg") no-repeat 15px center;
+}
+.dark .input-group:nth-child(3) input{
+    background: transparent url("/public/assets/images/padlock-light.svg") no-repeat 15px center;
+}
+
+.dark .remember span { color: #EDEDED; }
+
+.dark .forget { color: #909090; }
+.dark .forget a { color: #EDEDED; }

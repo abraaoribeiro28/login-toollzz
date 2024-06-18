@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition-duration: 300ms;
+    font-family: Inter, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background: #F9F9F9;
+}
