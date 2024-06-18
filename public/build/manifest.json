@@ -1,0 +1,68 @@
+{
+  "public/assets/images/banner.jpeg": {
+    "file": "assets/banner-Do_XnayJ.jpeg",
+    "src": "public/assets/images/banner.jpeg"
+  },
+  "public/assets/images/email.svg": {
+    "file": "assets/email--dJEnYpf.svg",
+    "src": "public/assets/images/email.svg"
+  },
+  "public/assets/images/padlock-light.svg": {
+    "file": "assets/padlock-light-oeWIKURX.svg",
+    "src": "public/assets/images/padlock-light.svg"
+  },
+  "public/assets/images/padlock.svg": {
+    "file": "assets/padlock-C88NxGr5.svg",
+    "src": "public/assets/images/padlock.svg"
+  },
+  "public/assets/images/user-light.svg": {
+    "file": "assets/user-light-DM58x6Y7.svg",
+    "src": "public/assets/images/user-light.svg"
+  },
+  "public/assets/images/user.svg": {
+    "file": "assets/user-Cn9a0Wcv.svg",
+    "src": "public/assets/images/user.svg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-B25jvwcI.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/dashboard.css": {
+    "file": "assets/dashboard-CxCJt3qA.css",
+    "src": "resources/css/dashboard.css",
+    "isEntry": true
+  },
+  "resources/css/main.css": {
+    "file": "assets/main-DDXBVb0y.css",
+    "src": "resources/css/main.css",
+    "isEntry": true
+  },
+  "resources/css/register.css": {
+    "file": "assets/register-C-F9CfKh.css",
+    "src": "resources/css/register.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-IUHTmHRp.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/slide.js",
+      "resources/js/dark-mode.js"
+    ]
+  },
+  "resources/js/dark-mode.js": {
+    "file": "assets/dark-mode-BE07Yq-_.js",
+    "name": "dark-mode",
+    "src": "resources/js/dark-mode.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/slide.js": {
+    "file": "assets/slide-CnAUX4ju.js",
+    "name": "slide",
+    "src": "resources/js/slide.js",
+    "isDynamicEntry": true
+  }
+}
