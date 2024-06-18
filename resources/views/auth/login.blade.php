@@ -5,7 +5,7 @@
             <button class="btn btn-back-mobile">
                 <x-icons.back-mobile />
             </button>
-            <a class="btn">Criar conta</a>
+            <a href="{{ route('register') }}" class="btn">Criar conta</a>
         </div>
 
         <x-application-logo class="logo logo-mobile" />
@@ -52,7 +52,7 @@
                     </label>
                 </div>
                 <x-captcha />
-                <x-primary-button icon="sumbmit">
+                <x-primary-button icon="submit">
                     Entrar
                 </x-primary-button>
             </div>

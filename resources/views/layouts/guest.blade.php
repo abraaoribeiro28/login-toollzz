@@ -14,6 +14,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @yield('style')
     </head>
     <body>
         <div class="container">

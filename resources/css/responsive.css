@@ -4,6 +4,7 @@
 
 @media only screen and (min-width: 992px) {
     .container {
+        overflow: hidden;
         grid-template-columns: 2fr 1.5fr;
     }
 
@@ -17,6 +18,11 @@
     .logo-mobile,
     .btn-back-mobile {
         display: none;
+    }
+
+    .login {
+        padding: 24px;
+        overflow-y: auto;
     }
 
     .login .actions-top { border: none; }
@@ -33,6 +39,12 @@
         flex-direction: column;
     }
 
+    .remember {
+        padding: 0 0 24px 0;
+    }
+
+    .btn-submit{ margin: 24px 0; }
+    .register .btn-submit{ margin: 24px 0 0 0; }
     .btn-submit svg{ display: inline; }
 }
 

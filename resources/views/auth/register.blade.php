@@ -1,52 +1,65 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+    <div class="login register">
+        <div class="actions-top">
+            <x-application-logo class="logo logo-desktop" />
+            <button class="btn btn-back-mobile">
+                <x-icons.back-mobile />
+            </button>
+            <a href="{{ route('login') }}" class="btn">Entrar</a>
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <x-application-logo class="logo logo-mobile" />
+
+        <div class="welcome">
+            <h2>Boas-vindas!</h2>
+            <p>Cadastre-se utilizando uma das opções abaixo</p>
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="socials">
+            <button class="btn btn-social">
+                <x-icons.google />
+            </button>
+            <button class="btn btn-social">
+                <x-icons.facebook />
+            </button>
+            <button class="btn btn-social">
+                <x-icons.apple />
+            </button>
+            <button class="btn btn-social">
+                <x-icons.twitter />
+            </button>
         </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        <div class="or">
+            <div class="divider"></div>
+            <span>OU</span>
+            <div class="divider"></div>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+        <form action="{{ route('register') }}" method="POST" >
+            @csrf
+            <x-input id="name" type="text" name="name" label="Nome de usuário" :value="old('name')"
+                     placeholder="Digite seu nome" required autocomplete="off" />
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
+            <x-input id="email" type="email" name="email" label="E-mail" :value="old('email')"
+                     placeholder="Digite seu e-mail" required autocomplete="off" />
+
+            <x-input id="password" type="password" name="password" label="Senha" :value="old('password')"
+                     placeholder="Digite sua senha" required autocomplete="off" />
+
+            <x-input id="password_confirmation" type="password" name="password_confirmation" label="Confirme sua senha"
+                     :value="old('password_confirmation')" placeholder="Confirme sua senha" required autocomplete="off" />
+
+            <div class="reverse">
+                <x-captcha class="mt-24px"/>
+                <x-primary-button icon="submit">
+                    Registrar-se
+                </x-primary-button>
+            </div>
+        </form>
+    </div>
+
+    @section('style')
+        @vite(['resources/css/register.css'])
+    @endsection
 </x-guest-layout>
