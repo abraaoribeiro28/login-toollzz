@@ -29,8 +29,8 @@ git clone https://github.com/abraaoribeiro28/login-toollzz.git
 ```
 
 ### Configurações do projeto
-Após clonar o projeto, copie o arquivo .env.example nomeando-o para .env. <br>
-Modifique as informações de conexão do seu banco de dados no arquivo .env:
+Após clonar o projeto, copie o arquivo `.env.example` nomeando-o para `.env.` <br>
+Modifique as informações de conexão do seu banco de dados no arquivo `.env`:
 
 ```bash
 DB_CONNECTION=sqlite
@@ -41,7 +41,7 @@ DB_CONNECTION=sqlite
 #DB_PASSWORD=
 ```
 
-Caso você queira continuar com o sqlite, crie um arquivo 'databse.sqlite' dentro da pasta 'database'.
+Caso você queira continuar com o sqlite, crie um arquivo `databse.sqlite` dentro da pasta `database`.
 
 ### Execução
 Instale as dependencias do composer com:
@@ -50,16 +50,108 @@ Instale as dependencias do composer com:
 composer install
 ```
 Em seguida execute as migrations
+
 ```bash
 php artisan migrate --seed
 ```
 Agora faça o build dos assets
+
 ```bash
 npm run build
 ```
-Agora em seu navegador entre em
+Execute o comando para simular um servidor
+
 ```bash
-localhost:8080
+php artisan serve
 ```
+Agora em seu navegador acesse
+
+```bash
+localhost:8000
+```
+
 Agora o projeto deve estar funcionando.
+
+# API
+Esta API permite a autenticação e criação de usuários e o acesso a recursos protegidos.
+A autenticação é realizada utilizando Laravel Sanctum.
+
+# API Documentation
+
+## Introduction
+
+Esta API permite a autenticação de usuários e o acesso a recursos protegidos. A autenticação é realizada utilizando Laravel Sanctum.
+
+## Endpoints
+
+## Entrar (login)
+
+| Método | Url                          |
+|:-------|:-----------------------------|
+| POST   | http://\<dominio\>/api/login |
+
+**Header**
+- Content-Type `application/json`
+- Accept `application/json`
+
+**Body**
+```bash
+{
+    "email": "test@example.com",
+    "password": "password"
+}
+```
+
+**Exemplo de retorno**
+```bash
+{
+    "access_token": "1|ycVE4nH7J9NqxRGejgOi3bH18fmZQwMjcZlmVZCm7358746c",
+    "token_type": "Bearer"
+}
+```
+
+## Registro (register)
+
+| Método | Url                             |
+|:-------|:--------------------------------|
+| POST   | http://\<dominio\>/api/register |
+
+**Header**
+- Content-Type `application/json`
+- Accept `application/json`
+
+**Body**
+```bash
+{
+    "name": "Root",
+    "email": "root@example.com",
+    "password": "password"
+}
+```
+
+**Exemplo de retorno**
+```bash
+{
+    "message": "Usuário criado com sucesso!"
+}
+```
+
+
+## Sair (logout)
+
+| Método | Url                             |
+|:-------|:--------------------------------|
+| POST   | http://\<dominio\>/api/logout |
+
+**Header**
+- Authorization `Bearer TOKEN`
+- Content-Type `application/json`
+- Accept `application/json`
+
+**Exemplo de retorno**
+```bash
+{
+    "message": "Usuário criado com sucesso!"
+}
+```
 
