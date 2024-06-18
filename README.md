@@ -25,7 +25,7 @@ senha, com segurança através de criptografia de dados e validações.
 </p>
 
 ```bash
-git clone https://github.com/abraaoribeiro28/login-toollzz.git
+git clone https://github.com/abraaoribeiro28/login-toolz.git
 ```
 
 ### Configurações do projeto
