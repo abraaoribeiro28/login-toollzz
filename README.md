@@ -49,14 +49,16 @@ Instale as dependencias do composer com:
 ```bash
 composer install
 ```
-Em seguida execute as migrations
+Em seguida execute os seguintes comandos
 
 ```bash
+php arisan key:generate
 php artisan migrate --seed
 ```
 Agora faça o build dos assets
 
 ```bash
+npm install
 npm run build
 ```
 Execute o comando para simular um servidor
